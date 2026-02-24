@@ -1,0 +1,124 @@
+.job-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.job-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.job-info {
+    flex: 1;
+    min-width: 0;
+    /* Importante para que el texto no rompa el layout */
+}
+
+.job-name {
+    margin: 0;
+    font-size: 1.15rem;
+    color: #2c3e50;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.job-id {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    margin-top: 0.2rem;
+    display: block;
+}
+
+.job-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    position: relative;
+}
+
+.job-input {
+    width: 100%;
+    padding: 0.6rem 0.9rem;
+    border: 1.5px solid #dcdde1;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.job-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.job-input.input-error {
+    border-color: #e74c3c;
+}
+
+.error-text {
+    position: absolute;
+    bottom: -1.2rem;
+    left: 0.2rem;
+    color: #e74c3c;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.job-submit-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 100px;
+}
+
+.job-submit-btn:hover:not(:disabled) {
+    background-color: #2980b9;
+}
+
+.job-submit-btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+@media (max-width: 850px) {
+    .job-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.25rem;
+        padding: 1.25rem;
+    }
+
+    .job-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .input-group {
+        width: 100%;
+        max-width: none;
+    }
+}
